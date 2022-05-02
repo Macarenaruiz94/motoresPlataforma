@@ -4,15 +4,24 @@ using UnityEngine;
 
 public class PlayerControl : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public float speed;
+    public float jump;
+    Rigidbody2D rb;
+
     void Start()
     {
-        
+       rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
+
     void Update()
     {
-        
+        var movimiento = Input.GetAxisRaw("Horizontal");
+        transform.position += new Vector3(movimiento, 0, 0) * Time.deltaTime * speed;
+
+        if (Input.GetButtonDown("Jump") && Mathf.Abs(rb.velocity.y) < 0.001f)
+        {
+            rb.AddForce(new Vector2(0, jump), ForceMode2D.Impulse);
+        }
     }
 }
