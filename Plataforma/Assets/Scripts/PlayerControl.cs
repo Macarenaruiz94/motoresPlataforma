@@ -7,6 +7,8 @@ public class PlayerControl : MonoBehaviour
     public float speed;
     public float jump;
     Rigidbody2D rb;
+    public ProyectilControl ProyectilPrefab;
+    public Transform LaunchOffset;
 
     void Start()
     {
@@ -22,6 +24,11 @@ public class PlayerControl : MonoBehaviour
         if (Input.GetButtonDown("Jump") && Mathf.Abs(rb.velocity.y) < 0.001f)
         {
             rb.AddForce(new Vector2(0, jump), ForceMode2D.Impulse);
+        }
+
+        if (Input.GetButtonDown("Fire1"))
+        {
+            Instantiate(ProyectilPrefab, LaunchOffset.position, transform.rotation);
         }
     }
 }
