@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemigo
   - Boss
+  - Bala
   layers:
   - Default
   - TransparentFX
