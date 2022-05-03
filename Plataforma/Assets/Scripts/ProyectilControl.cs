@@ -14,6 +14,14 @@ public class ProyectilControl : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Destroy(gameObject);
+        if (CompareTag("Enemigo"))
+        {
+            SendMessage("Hit");
+            Destroy(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 }

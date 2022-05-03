@@ -7,6 +7,7 @@ public class EnemigoControl : MonoBehaviour
     public float maxSpeed = 4f;
     public float speed = 4f;
     private Rigidbody2D rb2d;
+    private int Health = 1;
 
     void Start()
     {
@@ -34,10 +35,12 @@ public class EnemigoControl : MonoBehaviour
             transform.localScale = new Vector3(1f, 1f, 1f);
         }
     }
-
-    // Update is called once per frame
-    void Update()
+    public void Hit()
     {
-        
+        Health -= 1;
+        if (Health == 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }
