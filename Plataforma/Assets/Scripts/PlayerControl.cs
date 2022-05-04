@@ -28,7 +28,7 @@ public class PlayerControl : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1"))
         {
-            Instantiate(ProyectilPrefab, LaunchOffset.position, transform.rotation);
+            Instantiate(ProyectilPrefab, LaunchOffset.position, LaunchOffset.transform.rotation);
         }
     }
 }

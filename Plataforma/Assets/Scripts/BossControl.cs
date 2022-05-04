@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemigoControl : MonoBehaviour
+public class BossControl : MonoBehaviour
 {
     public float maxSpeed = 4f;
     public float speed = 4f;
     private Rigidbody2D rb2d;
-    private int Health = 1;
+    private int Health = 5;
 
     void Start()
     {
